@@ -28,7 +28,6 @@ mix.js('js/helpers.js', 'js/')
   .sass('sass/home.scss', 'css/')
   .sass('sass/listing.scss', 'css/')
   .sass('sass/post.scss', 'css/')
-  .sass('sass/newsletter.scss', 'css/')
   .sass('sass/tags.scss', 'css/')
   .sass('sass/404.scss', 'css/')
   .options({
