@@ -1,7 +1,7 @@
 {{!-- The template below includes the markup for each post --}}
 
 {{#foreach posts visibility="all"}}
-  {{#is "story"}}
+  {{#is "post"}}
     <div class="m-recommended-slider__item glide__slide">
   {{/is}}
   <article class="m-article-card {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
@@ -43,14 +43,14 @@
       </a>
     </div>
   </article>
-  {{#is "story"}}
+  {{#is "post"}}
     </div>
   {{/is}}
   {{else}}
     <header class="m-heading no-margin">
-      <h3>{{t "No stories found"}}</h3>
+      <h3>{{t "No issues found"}}</h3>
       <p>
-        {{t "Apparently there are no stories at the moment, check again later."}}
+        {{t "Apparently there are no newsletter issues at the moment, check again later."}}
       </p>
     </header>
 {{/foreach}}

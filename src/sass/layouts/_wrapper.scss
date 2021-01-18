@@ -55,3 +55,38 @@
     padding-top: 80px;
   }
 }
+
+.l-wrapper-issue {
+  @extend .l-wrapper;
+
+  @include respond-to('medium') {
+    max-width: 580px;
+  }
+
+  &.in-post {
+    @include respond-to('medium') {
+      max-width: 580px;
+    }
+  }
+
+  &.in-comments {
+    @include respond-to('medium') {
+      max-width: 580px;
+    }
+  }
+
+  &.in-recommended {
+    @include respond-to('large') {
+      padding: 0;
+      max-width: 580px;
+    }
+
+    @include respond-to('largest') {
+      max-width: 580px;
+    }
+  }
+}
+
+.l-wrapper-issue.in-post.no-image {
+  @extend .l-wrapper;
+}
