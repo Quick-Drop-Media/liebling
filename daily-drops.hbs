@@ -41,7 +41,7 @@ into the {body} of the default.hbs template --}}
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
       <div class="l-grid centered">
-        {{#get "posts" filter="primary_tag:issue" include="authors,tags" limit="5" as |featured|}}
+        {{#get "posts" filter="featured:true+primary_tag:daily-drop" include="authors,tags" limit="5" as |featured|}}
           {{#if featured}}
             <div class="m-featured-slider glide js-featured-slider">
               <div class="glide__track" data-glide-el="track">
@@ -108,7 +108,7 @@ into the {body} of the default.hbs template --}}
           {{/if}}
         {{/get}}
         {{!-- The tag below iterates over all the posts --}}
-        {{> "loop_issues"}}
+        {{> "loop_daily_drops"}}
       </div>
     </div>
     {{!-- Links to Previous/Next posts --}}
