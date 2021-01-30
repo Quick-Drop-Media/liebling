@@ -10,16 +10,27 @@ This footer template is shared across all the pages.
       </nav>
     {{/if}}
     <nav class="m-footer-social">
-      {{#if @site.facebook}}
-        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-          <span class="icon-facebook" aria-hidden="true"></span>
-        </a>
-      {{/if}}
       {{#if @site.twitter}}
         <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
           <span class="icon-twitter" aria-hidden="true"></span>
         </a>
       {{/if}}
+      <a href="https://discord.com/invite/e5TXf3zWyh" target="_blank" rel="noopener" aria-label="Discord">
+        <span class="icon-discord" aria-hidden="true"></span>
+      </a>
+      {{#if @site.facebook}}
+        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
+          <span class="icon-facebook" aria-hidden="true"></span>
+        </a>
+      {{/if}}
+      <a href="https://www.twitch.tv/quickdropmedia/about" target="_blank" rel="noopener" aria-label="Twitch">
+        <span class="icon-twitch" aria-hidden="true"></span>
+      </a>
+      {{!-- TODO: Add shopping cart icon
+      <a href="https://shop.spreadshirt.com/quickdropmedia" target="_blank" rel="noopener" aria-label="Store">
+        <span class="icon-cart" aria-hidden="true"></span>
+      </a>
+      --}}
       <a href="{{@site.url}}/rss" aria-label="RSS">
         <span class="icon-rss" aria-hidden="true"></span>
       </a>
@@ -27,10 +38,10 @@ This footer template is shared across all the pages.
     <p class="m-footer-copyright">
       <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
       <span>&nbsp; &bull; &nbsp;</span>
-      <span>{{t "Published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+      <span>{{t "Built with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
     </p>
     <p class="m-footer-copyright jslicense">
-      <a href="{{asset "html/javascript.html"}}" rel="jslicense">{{t "JavaScript license information"}}</a>
+      <a href="https://www.privacypolicies.com/generic/" rel="privacy-policy">{{t "Privacy Policy"}}</a>
     </p>
   </div>
 </footer>
