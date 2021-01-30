@@ -22,6 +22,7 @@ $(document).ready(() => {
   }
 
   const $body = $('body')
+  const $logo = $('.qd-logo');
   const $header = $('.js-header')
   const $openMenu = $('.js-open-menu')
   const $closeMenu = $('.js-close-menu')
@@ -236,9 +237,11 @@ $(document).ready(() => {
 
   $toggleDarkMode.change(() => {
     if ($toggleDarkMode.is(':checked')) {
+      $logo.attr('src', LOGO_DARK_MODE_SRC);
       $('html').attr('data-theme', 'dark')
       localStorage.setItem('theme', 'dark')
     } else {
+      $logo.attr('src', LOGO_LIGHT_MODE_SRC);
       $('html').attr('data-theme', 'light')
       localStorage.setItem('theme', 'light')
     }
@@ -272,12 +275,11 @@ $(document).ready(() => {
   if (currentSavedTheme) {
     $('html').attr('data-theme', currentSavedTheme)
 
-    if (currentSavedTheme === 'dark') {
-      $toggleDarkMode.attr('checked', true)
-    }
-  } else {
-    if (isDarkMode()) {
-      $toggleDarkMode.attr('checked', true)
+    if ((currentSavedTheme === 'dark') || isDarkMode()) {
+      $toggleDarkMode.attr('checked', true);
+      $logo.attr('src', LOGO_DARK_MODE_SRC);
+    } else {
+      $logo.attr('src', LOGO_LIGHT_MODE_SRC);
     }
   }
 

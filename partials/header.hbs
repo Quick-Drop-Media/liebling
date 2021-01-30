@@ -9,7 +9,7 @@ This header template is shared across all the pages.
     </button>
     {{#if @site.logo}}
       <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
-        <img src="{{@site.logo}}" alt="{{@site.title}}">
+        <img class="qd-logo" alt="{{@site.title}}">
       </a>
     {{else}}
       <a href="{{@site.url}}" class="m-site-name in-mobile-topbar">
@@ -33,7 +33,7 @@ This header template is shared across all the pages.
               {{#if @site.logo}}
                 <li class="only-desktop" style="padding-top:5px">
                   <a href="{{@site.url}}" class="m-logo">
-                    <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    <img class="qd-logo" alt="{{@site.title}}">
                   </a>
                 </li>
                 {{else}}
