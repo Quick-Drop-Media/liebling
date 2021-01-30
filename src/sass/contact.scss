@@ -1,0 +1,43 @@
+@import "common/mixins";
+@import "common/variables";
+
+.l-content {
+  text-align: center;
+}
+
+#qd-thanks-message {
+  display: none;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+#qd-contact-form {
+  margin-bottom: 30px;
+
+  @include respond-to('medium') {
+    max-width: 600px;
+    margin: 0 auto 45px;
+  }
+}
+
+.qd-top-input {
+  width: 50%;
+  float: left;
+  padding-bottom: 10px;
+}
+
+.qd-reason-container {
+  padding-right: 5px;
+}
+
+.qd-message-container {
+  padding-bottom: 10px;
+}
+
+#qd-submit-contact-form {
+  cursor: pointer;
+}
+
+#qd-form-wrapper {
+  padding: 0 20px;
+}
