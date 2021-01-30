@@ -1,8 +1,13 @@
 @import "common/mixins";
 @import "common/variables";
 
-.l-content {
+.l-content-contact {
   text-align: center;
+
+  padding: 40px 0 20px;
+  @include respond-to('medium') {
+    padding: 60px 0 40px;
+  }
 }
 
 #qd-thanks-message {
