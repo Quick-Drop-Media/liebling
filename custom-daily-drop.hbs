@@ -10,7 +10,7 @@ This template is used for the post page.
 
 {{!-- This block loads specific styles for the post page --}}
 {{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/issue.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/daily_drop.css"}}" media="screen" />
 {{/contentFor}}
 
 {{!-- The tag below means: insert everything in this file
@@ -42,8 +42,7 @@ into the {body} of the default.hbs template --}}
         </header>
         <div class="l-wrapper-issue in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
           data-aos-delay="300">
-          <div
-            class="l-post-content has-subscribe-form js-progress-content">
+          <div class="qd-daily-drop-content has-subscribe-form js-progress-content">
             <div class="pos-relative js-post-content">
               <div class="m-share">
                 <div class="m-share__content js-sticky">
@@ -83,32 +82,6 @@ into the {body} of the default.hbs template --}}
             </div>
           </div>
         </section>
-        {{!-- If you want to embed comments, this is a good place to do it! --}}
-        {{!--
-          <section class="m-comments">
-            <div class="m-load-comments">
-              <div class="m-load-comments__line"></div>
-              <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments" data-tippy-content="Load comments">
-                <span class="icon-comments"></span>
-              </button>
-            </div>
-            <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
-                (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              </script>
-            </div>
-          </section>
-        --}}
       {{/post}}
     </div>
   </article>
