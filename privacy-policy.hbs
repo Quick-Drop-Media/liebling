@@ -1,0 +1,57 @@
+{{!--
+This template is used for the post page.
+--}}
+
+{{!-- This block preloads specific assets for the post page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
+{{/contentFor}}
+
+{{!-- This block loads specific styles for the post page --}}
+{{#contentFor "styles"}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+{{/contentFor}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{!< default}}
+
+{{!-- Special header.hbs partial to generate the <header> tag --}}
+{{#page}}
+  {{> header background=feature_image}}
+{{/page}}
+
+<main class="main-wrap">
+  {{#post}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=feature_image}}
+    </section>
+  {{/post}}
+
+  <article>
+    <div class="l-content in-post">
+      {{!-- Everything inside the #post tags pulls data from the post --}}
+      {{#page}}
+        <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up"
+          data-aos-delay="300">
+          <div
+            class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} has-subscribe-form js-progress-content">
+            <header class="m-heading">
+              <h1 class="m-heading__title in-post">{{title}}</h1>
+              <div class="m-heading__meta">
+                {{#if primary_tag}}
+                  <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
+                  <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
+                {{/if}}
+                <span class="m-heading__meta__time">Last updated on {{date updated_at}}</span>
+              </div>
+            </header>
+            <div class="pos-relative js-post-content">
+              {{content}}
+            </div>
+          </div>
+        </div>
+      {{/page}}
+    </div>
+  </article>
+</main>
