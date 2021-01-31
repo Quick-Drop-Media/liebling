@@ -273,6 +273,7 @@ $(document).ready(() => {
   })
 
   if (currentSavedTheme) {
+    $('html').attr('data-theme', currentSavedTheme)
     if ((currentSavedTheme === 'dark') || isDarkMode()) {
       $toggleDarkMode.attr('checked', true);
       $logo.attr('src', LOGO_DARK_MODE_SRC);
