@@ -273,16 +273,23 @@ $(document).ready(() => {
   })
 
   if (currentSavedTheme) {
-    $('html').attr('data-theme', currentSavedTheme)
-    if ((currentSavedTheme === 'dark') || isDarkMode()) {
+    $('html').attr('data-theme', currentSavedTheme);
+
+    if (currentSavedTheme === 'dark') {
       $toggleDarkMode.attr('checked', true);
       $logo.attr('src', LOGO_DARK_MODE_SRC);
     } else {
       $logo.attr('src', LOGO_LIGHT_MODE_SRC);
     }
   } else {
-    $logo.attr('src', LOGO_LIGHT_MODE_SRC);
+    if (isDarkMode()) {
+      $toggleDarkMode.attr('checked', true);
+      $logo.attr('src', LOGO_DARK_MODE_SRC);
+    } else {
+      $logo.attr('src', LOGO_LIGHT_MODE_SRC);
+    }
   }
+
 
   if ($header.length > 0) {
     const headroom = new Headroom($header[0], {
