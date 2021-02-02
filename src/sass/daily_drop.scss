@@ -68,10 +68,10 @@
   }
 
   p {
-    margin-bottom: 5px;
+    margin-bottom: 9px;
 
     @include respond-to('medium') {
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
   }
 }
