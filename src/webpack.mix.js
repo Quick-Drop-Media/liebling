@@ -31,6 +31,7 @@ mix.js('js/helpers.js', 'js/')
   .sass('sass/listing.scss', 'css/')
   .sass('sass/post.scss', 'css/')
   .sass('sass/daily_drop.scss', 'css/')
+  .sass('sass/daily_drops.scss', 'css/')
   .sass('sass/tags.scss', 'css/')
   .sass('sass/404.scss', 'css/')
   .options({

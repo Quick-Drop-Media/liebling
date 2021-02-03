@@ -1,0 +1,26 @@
+@import "common/mixins";
+@import "common/variables";
+@import "common/helpers";
+
+@import "components/articles/featured-slider";
+@import "components/articles/featured-article";
+@import "components/ui/button";
+@import "components/ui/input";
+
+.qd-featured-article__title {
+  @extend .m-featured-article__title;
+
+  @include respond-to('medium') {
+    max-width: 100%;
+  }
+}
+
+.qd-featured-article__excerpt {
+  @extend .m-featured-article__title;
+  font-size: 1.1em;
+  font-style: italic;
+
+  @include respond-to('medium') {
+    font-size: 1.25em;
+  }
+}
