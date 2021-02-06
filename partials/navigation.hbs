@@ -7,14 +7,14 @@ Also it includes the big submenu.
   <ul class="m-secondary-menu">
     {{#foreach navigation}}
       <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
-        <a href="{{url absolute="true"}}">{{label}}</a>
+        <a href="{{url absolute="true"}}" {{#has slug="shop"}}target="_blank" rel="noopener noreferrer"{{/has}}>{{label}}</a>
       </li>
     {{/foreach}}
   </ul>
 {{else}}
   {{#foreach navigation}}
     <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
-      <a href="{{url absolute="true"}}">{{label}}</a>
+      <a href="{{url absolute="true"}}" {{#has slug="shop"}}target="_blank" rel="noopener noreferrer"{{/has}}>{{label}}</a>
     </li>
   {{/foreach}}
 {{/if}}
