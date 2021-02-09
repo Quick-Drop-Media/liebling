@@ -3,10 +3,9 @@
 {{#foreach posts visibility="all"}}
   {{!-- Don't show the first card if it was already in the featured --}}
   {{#if @first}}
-    {{#if featured}}
-    {{else}}
+    {{#unless featured}}
       {{> "article_card"}}
-    {{/if}}
+    {{/unless}}
   {{else}}
     {{> "article_card"}}
   {{/if}}
