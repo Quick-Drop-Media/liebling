@@ -134,7 +134,7 @@ $(document).ready(() => {
     }
 
     if (action === 'signup') {
-      window.location = `${ghostHost}/signup/?action=checkout`
+      showNotification('signup')
     }
 
     if (action === 'checkout') {
