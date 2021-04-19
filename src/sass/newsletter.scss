@@ -1,5 +1,8 @@
-/* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
-Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
+@import "common/mixins";
+@import "common/variables";
+@import "common/helpers";
+
+@import "components/subscribe/subscribe-section";
 
 #mc_embed_signup form {text-align:center; padding:10px 0 10px 0;}
 .mc-field-group { display: inline-block; } /* positions input field horizontally */
@@ -23,10 +26,11 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 #mc_embed_signup{
     clear:left;
     width:100%;
-  }
-  #mc_embed_signup .button {
-    background-color:#3d77d9;
-  }
-  #mc_embed_signup form {
-    text-align: left;
-  }
+}
+#mc_embed_signup .button {
+background-color:#3d77d9;
+}
+#mc_embed_signup form {
+text-align: left;
+}
+
