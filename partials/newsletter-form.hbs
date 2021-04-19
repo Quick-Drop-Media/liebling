@@ -1,103 +1,18 @@
-{{!-- This block loads specific styles for the index page --}}
-{{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/newsletter.css"}}" media="screen" />
+  
+{{!--
+This subscribe template is used to display the form where users can subscribe.
+You need to enable the members feature first.
+--}}
 
-    <style>
-    @font-face {
-      font-family: "Poppins";
-      src: url("{{asset "fonts/poppins/Poppins-Light.ttf"}}");
-    }
-    body {
-      font-family: "Poppins", sans-serif;
-    }
-
-    .left {
-      width: 45%;
-      float: left;
-    }
-    .right {
-      width: 55%;
-      float: right;
-    }
-
-    h4 {
-      font-size: 120%;
-    }
-
-    .m-back {
-      align-items: center;
-      position: absolute;
-      top: 25px;
-      color: var(--titles-color);
-      letter-spacing: .2px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    #signup-content {
-      color: #ffffff;
-      padding: 35% 0% 0 10%; /* TODO: Get this to work at variable screen widths */
-    }
-
-    .social-link { cursor: pointer; }
-    .social-link a { color:inherit; } /* so that the icon links dont turn blue */
-
-    .header-img {
-      height: auto;
-    }
-
-    @media (min-width: 701px) {
-      body {
-        background-image: url("{{asset "images/newsletter_background.png"}}");
-        background-size: cover;
-      }
-
-      .header-img {
-        width: 95%;
-      }
-    }
-
-    @media (max-width: 700px) {
-      body {
-        background-color: #303e49;
-      }
-
-      #signup-content {
-        padding: 35% 5% 0 5%;
-      }
-
-      .left, .right {
-        width: 100%;
-       }
-
-      .header-img {
-        width: 100%;
-      }
-    }
-  </style>
-  <link href="https://cdn.jsdelivr.net/npm/ficons@1.1.52/dist/ficons/font.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-{{/contentFor}}
-
-{{!< default}}
-<div class="left">
-<div id="signup-content">
-  <a href="{{@site.url}}" class="m-back">
-    <span class="fa fa-arrow-left"></span>
-    <span>{{t "Home Page"}}</span>
-  </a>
-
-  <img class="header-img" src="{{asset "images/full_logo_white.png"}}" alt="Quick Drop Media">
-  <h4>Dropping you a daily care package of gaming news</h4>
-  <p>Get the free daily gaming email to stay ahead of the competition.</p>
-  <div id="mc_embed_signup">
-    <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container">
+<div class="m-subscribe-section__form">
+  <form data-members-form="subscribe" id="newsletter-form" class="m-subscribe-section__container">
     <div class="m-subscribe__form">
-      <input data-members-email id="newsletter-input" class="email m-input in-subscribe-section" type="email"
+      <div class="pos-relative">
+        <label for="newsletter-input" class="sr-only">{{t "Your email address"}}</label>
+        <input data-members-email id="newsletter-input" class="m-input in-subscribe-section" type="email"
           placeholder="{{t "Your email address"}}" required />
-      <div class="clear">
-        <button id="newsletter-button" class="button m-button primary block" type="submit">{{t "Try It"}}</button>
       </div>
+      <button id="newsletter-button" class="m-button primary block" type="submit">{{t "Subscribe"}}</button>
     </div>
     <div class="m-subscribe__success">
       <header class="m-heading no-margin">
@@ -114,16 +29,4 @@
       {{t "Oops! There was an error sending the email, please try later."}}
     </p>
   </form>
-  </div>
-
-  <div>
-    <span class="social-link"><a href="https://twitter.com/QuickDropMedia" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter fa-2x fa-fw"></i></a></span>
-    <span class="social-link"><a href="https://discord.gg/e5TXf3zWyh" target="_blank" rel="noopener noreferrer"><i class="fa fa-discord fa-2x fa-fw"></i></a></span>
-    <span class="social-link"><a href="https://www.facebook.com/Quick-Drop-Media-112767333958192/" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook fa-2x fa-fw"></i></a></span>
-    <span class="social-link"><a href="https://www.twitch.tv/quickdropmedia/about" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitch fa-2x fa-fw"></i></a></span>
-    <span class="social-link"><a href="https://www.youtube.com/channel/UCO-lSAHIvplMHSfrxLrJUmw" target="_blank" rel="noopener noreferrer"><i class="fa fa-youtube fa-2x fa-fw"></i></a></span>
-    <span class="social-link"><a href="https://shop.spreadshirt.com/quickdropmedia" target="_blank" rel="noopener noreferrer"><i class="fa fa-shopping-cart fa-2x fa-fw"></i></a></span>
-  </div>
 </div>
-</div>
-<div class="right"></div>
