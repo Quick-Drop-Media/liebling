@@ -1,4 +1,46 @@
 .l-post-content {
+
+  .qd-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100%;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    @include respond-to('medium') {
+      margin-left: 0;
+    }
+  }
+
+  .qd-table thead tr {
+      background-color: #007dde;
+      color: #ffffff;
+      text-align: center;
+  }
+
+  .qd-table th,
+  .qd-table td {
+      padding: 12px 15px;
+  }
+
+  .qd-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+      &:hover {
+        font-weight: bold;
+        color: #007dde;
+      }
+  }
+
+  .qd-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+  }
+
+  .qd-table tbody tr:last-of-type {
+      border-bottom: 2px solid #007dde;
+  }
+
   padding-bottom: 15px;
 
   @include respond-to('medium') {
